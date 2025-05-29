@@ -18,6 +18,9 @@
             overflow-x: hidden;
             cursor: none;
         }
+
+
+        
         a{
             text-decoration: none;
         }
@@ -135,7 +138,7 @@
             }
         }
 
-        /* Terminal Cursor */
+        
         .terminal-cursor {
             position: fixed;
             bottom: 20px;
@@ -152,7 +155,6 @@
             51%, 100% { opacity: 0; }
         }
 
-        /* Glitch Lines */
         .glitch-lines {
             position: fixed;
             top: 0;
@@ -182,7 +184,6 @@
             }
         }
 
-        /* Enhanced Custom Cursor */
         .cursor {
             position: fixed;
             width: 20px;
@@ -284,7 +285,6 @@
             }
         }
 
-        /* Enhanced Grid Overlay */
         .grid-overlay {
             position: fixed;
             top: 0;
@@ -304,7 +304,6 @@
             50% { opacity: 0.3; }
         }
 
-        /* Enhanced Navigation */
         nav {
             position: fixed;
             top: 30px;
@@ -379,7 +378,6 @@
             width: 100%;
         }
 
-        /* Enhanced Sections */
         section {
             min-height: 100vh;
             padding: 100px 50px;
@@ -406,7 +404,6 @@
             position: relative;
         }
 
-        /* Enhanced Hero Section */
         .hero {
             text-align: center;
             animation-delay: 0.5s;
@@ -552,6 +549,7 @@
             position: relative;
             display: flex;
             justify-content: center;
+            margin-top: 40px;
         }
 
         /* Replaced rotating rings with animated hexagon */
@@ -560,6 +558,7 @@
             height: 350px;
             position: relative;
             animation: profileFloat 4s ease-in-out infinite;
+             margin-top: 40px;
         }
 
         @keyframes profileFloat {
@@ -567,31 +566,75 @@
             50% { transform: translateY(-20px); }
         }
 
-        .hexagon {
-            width: 350px;
-            height: 350px;
-            background: linear-gradient(45deg, #00ff88, #0088ff, #ff0088);
-            background-size: 400% 400%;
-            animation: gradientShift 3s ease-in-out infinite;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 
-                0 0 50px rgba(0,255,136,0.5),
-                0 0 100px rgba(0,255,136,0.3),
-                inset 0 0 50px rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
+       /* Replace the .hexagon styles with these */
+.profile-img-container {
+       width: 330px;
+    height: 323px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00ff88, #0088ff, #ff0088);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease-in-out infinite;
+    display: flex;
+    align-items: flex-end; /* This will align the image to the bottom */
+    justify-content: center;
+    box-shadow: 
+        0 0 50px rgba(0,255,136,0.5),
+        0 0 100px rgba(0,255,136,0.3),
+        inset 0 0 50px rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 20px; /* Adjust this value to move image up/down */
+}
 
-        .hexagon:hover {
-            transform: scale(1.05);
-            box-shadow: 
-                0 0 70px rgba(0,255,136,0.7),
-                0 0 140px rgba(0,255,136,0.5),
-                inset 0 0 70px rgba(255,255,255,0.2);
-        }
+.profile-img-container:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 70px rgba(0,255,136,0.7),
+        0 0 140px rgba(0,255,136,0.5),
+        inset 0 0 70px rgba(255,255,255,0.2);
+}
+
+.profile-photo {
+    width: 320px; /* Slightly smaller than container */
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top; /* Focus on the top of the image */
+    border: 3px solid rgba(0,255,136,0.5);
+    transform: translateY(20px); /* Adjust this to fine-tune vertical position */
+    transition: all 0.3s ease;
+}
+
+.profile-img-container:hover .profile-photo {
+    transform: scale(1.02);
+    border-color: #00ff88;
+}
+
+@media (max-width: 768px) {
+    .profile-img-container {
+        width: 235px;
+        height: 235px;
+        padding-bottom: 15px;
+    }
+    .profile-photo {
+        width: 230px;
+        height: 230px;
+        transform: translateY(15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-img-container {
+       width: 235px;
+        height: 235px;
+        padding-bottom: 10px;
+    }
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        transform: translateY(10px);
+    }
+}
 
         .profile-placeholder {
             font-size: 5rem;
@@ -1583,6 +1626,7 @@
             }
 
             .skills h2,
+            
             .projects h2,
             .contact h2 {
                 font-size: 2.5rem;
@@ -1594,7 +1638,10 @@
         }
 
         @media (max-width: 480px) {
+            
+            h
             .hero h1 {
+
                 font-size: 2.5rem;
             }
 
@@ -1635,6 +1682,7 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        
     </nav>
 
     <!-- Hero Section -->
@@ -1651,36 +1699,36 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="profile-container">
-                    <div class="profile-img">
-                        <div class="hexagon">
-                            <div class="profile-placeholder">👨‍💻</div>
-                        </div>
-                        <div class="profile-particles">
-                            <div class="profile-particle"></div>
-                            <div class="profile-particle"></div>
-                            <div class="profile-particle"></div>
-                            <div class="profile-particle"></div>
-                            <div class="profile-particle"></div>
-                            <div class="profile-particle"></div>
-                        </div>
+  
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <div class="profile-img-container">
+                        <img src="./image copy.png" alt="Hitesh Reddy K" class="profile-photo">
+                    </div>
+                    <div class="profile-particles">
+                        <div class="profile-particle"></div>
+                        <div class="profile-particle"></div>
+                        <div class="profile-particle"></div>
+                        <div class="profile-particle"></div>
+                        <div class="profile-particle"></div>
+                        <div class="profile-particle"></div>
                     </div>
                 </div>
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>I'm a passionate full-stack developer. My journey in tech started with curiosity and has evolved into a career dedicated to building innovative applications.</p>
-                    <p>I specialize in modern web technologies   and creating user experiences that are both beautiful and functional. Every project is an opportunity to push boundaries and deliver exceptional results.</p>
-                    <p>When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.</p>
-                </div>
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I'm a passionate full-stack developer. My journey in tech started with curiosity and has evolved into a career dedicated to building innovative applications.</p>
+                <p>I specialize in modern web technologies and creating user experiences that are both beautiful and functional. Every project is an opportunity to push boundaries and deliver exceptional results.</p>
+                <p>When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+    
 
-    <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
             <h2>My Skills</h2>
@@ -1713,8 +1761,8 @@
         </div>
     </section>
 
+
     
-    <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <h2>Featured Projects</h2>
@@ -1726,7 +1774,9 @@
                         <div class="project-content">
                             <h3>anonymous messages</h3>
                             <div class="project-tech">
-                                <span class="tech-tag">html,css,js</span>
+                                <span class="tech-tag">html</span>
+                                <span class="tech-tag">css</span>
+                                <span class="tech-tag">javascript</span>
                                 <span class="tech-tag">Node.js</span>
                                 <span class="tech-tag">MongoDB</span>
                             </div>
@@ -1751,11 +1801,14 @@
 
                             <h3>foodfusion</h3>
                             <div class="project-tech">
-                                <span class="tech-tag">htmlcss,js</span>
-                                <span class="tech-tag">node,js</span>
+                                <span class="tech-tag">html,css,js</span>
+                                <span class="tech-tag">css</span>
+                                <span class="tech-tag">javascript</span>
+                                <span class="tech-tag">node.js</span>
                                 <span class="tech-tag">mongodb</span>
                                 <span class="tech-tag">jwt</span>
                             </div>
+                    
                         </div>
                     </a>
                     </div>
@@ -1784,7 +1837,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Get In Touch</h2>
