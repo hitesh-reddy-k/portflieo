@@ -19,6 +19,378 @@
             cursor: none;
         }
 
+        .hero {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, 
+        rgba(0,10,20,0.8) 0%, 
+        rgba(0,5,15,0.9) 70%);
+}
+
+.cyberpunk-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.cyber-glitch {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: #00ff88;
+    text-shadow: 
+        0 0 10px #00ff88,
+        0 0 20px #00ff88,
+        0 0 40px #00ff88;
+    position: relative;
+    animation: glitch-effect 5s infinite;
+}
+
+.cyber-glitch::before,
+.cyber-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.cyber-glitch::before {
+    left: 3px;
+    text-shadow: -3px 0 #ff00ff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.cyber-glitch::after {
+    left: -3px;
+    text-shadow: -3px 0 #00ffff;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+.circuit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(0,255,136,0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,255,136,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.binary-matrix {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    color: #00ff88;
+    text-shadow: 0 0 5px #00ff88;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.binary-line {
+    display: block;
+    animation: binary-scroll 10s linear infinite;
+}
+
+.binary-line:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.typing-hologram {
+    position: relative;
+    background: rgba(0,20,30,0.5);
+    border: 1px solid #00ff88;
+    box-shadow: 
+        inset 0 0 20px rgba(0,255,136,0.3),
+        0 0 30px rgba(0,255,136,0.2);
+    padding: 1.5rem 3rem;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 2px,
+        rgba(0,255,136,0.1) 3px,
+        rgba(0,255,136,0.1) 4px
+    );
+    animation: scanline-anim 5s linear infinite;
+}
+
+.typing-container {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminal-caret {
+    color: #00ff88;
+    animation: caret-blink 1s infinite;
+    margin-left: 5px;
+}
+
+.cyber-button {
+    position: relative;
+    display: inline-block;
+    padding: 20px 50px;
+    background: linear-gradient(45deg, #00ff88, #0088ff);
+    background-size: 200% 200%;
+    color: #000;
+    text-decoration: none;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 20px rgba(0,255,136,0.5),
+        inset 0 0 10px rgba(255,255,255,0.3);
+    font-family: 'Courier New', monospace;
+    border: 1px solid #00ff88;
+}
+
+.button-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(255,255,255,0.5), 
+        transparent);
+    animation: button-pulse-anim 3s linear infinite;
+    opacity: 0;
+}
+
+.button-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    animation: glitch-button 5s infinite;
+}
+
+.tech-orbits {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.orbit {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: orbit-rotate 20s linear infinite;
+}
+
+.orbit-path {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed rgba(0,255,136,0.3);
+    border-radius: 50%;
+}
+
+.tech-icon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #00ff88;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+.orbit-1 { top: 20%; left: 20%; }
+.orbit-2 { top: 60%; left: 70%; animation-delay: -5s; }
+.orbit-3 { top: 30%; left: 80%; animation-delay: -10s; }
+
+.server-rack {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 200px;
+    background: rgba(0,10,20,0.5);
+    border: 1px solid rgba(0,255,136,0.3);
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.server-unit {
+    height: 40px;
+    background: rgba(0,5,10,0.8);
+    border: 1px solid rgba(0,255,136,0.2);
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.server-lights {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        #00ff88, #ff00ff, #00ffff, #00ff88);
+    background-size: 400% 100%;
+    animation: server-lights-anim 5s linear infinite;
+}
+
+/* Animations */
+@keyframes glitch-effect {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(-3px, -3px); }
+    60% { transform: translate(3px, 3px); }
+    80% { transform: translate(3px, -3px); }
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip: rect(32px, 9999px, 28px, 0); }
+    10% { clip: rect(13px, 9999px, 37px, 0); }
+    20% { clip: rect(45px, 9999px, 33px, 0); }
+    30% { clip: rect(31px, 9999px, 94px, 0); }
+    40% { clip: rect(88px, 9999px, 98px, 0); }
+    50% { clip: rect(9px, 9999px, 98px, 0); }
+    60% { clip: rect(37px, 9999px, 17px, 0); }
+    70% { clip: rect(77px, 9999px, 34px, 0); }
+    80% { clip: rect(55px, 9999px, 49px, 0); }
+    90% { clip: rect(10px, 9999px, 2px, 0); }
+    100% { clip: rect(35px, 9999px, 53px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip: rect(65px, 9999px, 119px, 0); }
+    10% { clip: rect(25px, 9999px, 145px, 0); }
+    20% { clip: rect(50px, 9999px, 41px, 0); }
+    30% { clip: rect(47px, 9999px, 130px, 0); }
+    40% { clip: rect(33px, 9999px, 120px, 0); }
+    50% { clip: rect(140px, 9999px, 100px, 0); }
+    60% { clip: rect(15px, 9999px, 110px, 0); }
+    70% { clip: rect(80px, 9999px, 3px, 0); }
+    80% { clip: rect(60px, 9999px, 80px, 0); }
+    90% { clip: rect(10px, 9999px, 70px, 0); }
+    100% { clip: rect(90px, 9999px, 100px, 0); }
+}
+
+@keyframes binary-scroll {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes scanline-anim {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes caret-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes button-pulse-anim {
+    0% { transform: translateX(-100%); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes glitch-button {
+    0%, 100% { opacity: 0.1; }
+    25% { opacity: 0.3; transform: translateX(-2px); }
+    50% { opacity: 0.1; transform: translateX(2px); }
+    75% { opacity: 0.3; transform: translateX(0); }
+}
+
+@keyframes orbit-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes server-lights-anim {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cyber-glitch {
+        font-size: 3rem;
+        letter-spacing: 0.3rem;
+    }
+    
+    .binary-matrix {
+        font-size: 1rem;
+    }
+    
+    .tech-orbits {
+        display: none;
+    }
+    
+    .server-rack {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cyber-glitch {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
+    
+    .typing-hologram {
+        padding: 1rem;
+    }
+    
+    .cyber-button {
+        padding: 15px 30px;
+        font-size: 0.9rem;
+    }
+}
+
 
         
         a{
@@ -552,7 +924,6 @@
             margin-top: 40px;
         }
 
-        /* Replaced rotating rings with animated hexagon */
         .profile-img {
             width: 350px;
             height: 350px;
@@ -565,8 +936,6 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
         }
-
-       /* Replace the .hexagon styles with these */
 .profile-img-container {
        width: 330px;
     height: 323px;
@@ -1661,6 +2030,36 @@
                 margin: 0 10px;
             }
         }
+
+        .project-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img img {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.05);
+}
+
+/* Fallback styling for when images don't load */
+.project-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    background: linear-gradient(45deg, #00ff88, #0088ff, #ff0088);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+/* Hide emoji when image is present */
+.project-img:has(img) {
+    font-size: 0;
+    background: none;
+}
     </style>
 </head>
 <body>
@@ -1686,18 +2085,64 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hitesh Reddy K</h1>
-                <p class="subtitle">Full Stack Web and app developer</p>
+ <section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <!-- Cyberpunk-style main title with circuit board effect -->
+            <div class="cyberpunk-title">
+                <h1 class="cyber-glitch" data-text="HITESH_REDDY_K">HITESH_REDDY_K</h1>
+                <div class="circuit-overlay"></div>
+            </div>
+            
+            <!-- Binary code matrix effect behind the subtitle -->
+            <p class="subtitle binary-matrix">
+                <span class="binary-line">01000110 01110101 01101100 01101100 00100000 01010011 01110100 01100001 01100011 01101011</span>
+                <span class="binary-line">01000100 01100101 01110110 01100101 01101100 01101111 01110000 01100101 01110010</span>
+            </p>
+            
+            <!-- Holographic typing container with scan lines -->
+            <div class="typing-hologram">
+                <div class="scanlines"></div>
                 <div class="typing-container">
                     <div class="typing-animation" id="typing-text"></div>
+                    <div class="terminal-caret">_</div>
                 </div>
-                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
+            
+            <!-- Cyberpunk-style CTA button with energy pulse -->
+            <a href="#projects" class="cta-button cyber-button">
+                <span class="button-text">ACCESS_WORK</span>
+                <span class="button-pulse"></span>
+                <span class="button-glitch"></span>
+            </a>
+            
+            <!-- Tech elements floating around -->
+            <div class="tech-orbits">
+                <div class="orbit orbit-1">
+                    <div class="tech-icon">{"}"}</div>
+                    <div class="orbit-path"></div>
+                </div>
+                <div class="orbit orbit-2">
+                    <div class="tech-icon">{"< />"}</div>
+                    <div class="orbit-path"></div>
+                </div>
+                <div class="orbit orbit-3">
+                    <div class="tech-icon">{"() =>"}</div>
+                    <div class="orbit-path"></div>
+                </div>
+            </div>
+            
+            
+            <div class="server-rack">
+                <div class="server-unit"></div>
+                <div class="server-unit"></div>
+                <div class="server-unit"></div>
+                <div class="server-lights"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
   
 <section id="about" class="about">
@@ -1762,80 +2207,101 @@
     </section>
 
 
-    
     <section id="projects" class="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-front">
-                        <a href="https://anoniymousmessages.vercel.app/">
-                        <div href="https://anoniymousmessages.vercel.app/" class="project-img">🌐</div>
+    <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-front">
+                    <a href="https://anoniymousmessages.vercel.app/" target="_blank">
+                        <div class="project-img">
+                            <img src="./image.png" alt="Anonymous Messages Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                        </div>
                         <div class="project-content">
-                            <h3>anonymous messages</h3>
+                            <h3>Anonymous Messages</h3>
                             <div class="project-tech">
-                                <span class="tech-tag">html</span>
-                                <span class="tech-tag">css</span>
-                                <span class="tech-tag">javascript</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
                                 <span class="tech-tag">Node.js</span>
                                 <span class="tech-tag">MongoDB</span>
                             </div>
                         </div>
-                        </a>
-                    </div>
-                    <div class="project-back">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-featured e-commerce solution with real-time inventory management, secure payment processing, and advanced analytics dashboard.</p>
-                        <p>Built with modern technologies for optimal performance and scalability.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Live Demo</a>
-                            <a href="#" target="_blank">GitHub</a>
-                        </div>
+                    </a>
+                </div>
+                <div class="project-back">
+                    <h3>Anonymous Messages Platform</h3>
+                    <p>A secure messaging platform that allows users to send and receive anonymous messages with complete privacy protection.</p>
+                    <p>Built with modern web technologies for optimal performance and user experience.</p>
+                    <div class="project-links">
+                        <a href="https://anoniymousmessages.vercel.app/" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-front">
-                        <a href="https://gdg-hackhon-group-w31g.vercel.app/">
-                        <div class="project-img"></div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-front">
+                    <a href="https://gdg-hackhon-group-w31g.vercel.app/" target="_blank">
+                        <div class="project-img">
+                            <img src="./image copy 2.png" alt="Anonymous Messages Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                            
+                        </div>
                         <div class="project-content">
-
-                            <h3>foodfusion</h3>
+                            <h3>FoodFusion</h3>
                             <div class="project-tech">
-                                <span class="tech-tag">html,css,js</span>
-                                <span class="tech-tag">css</span>
-                                <span class="tech-tag">javascript</span>
-                                <span class="tech-tag">node.js</span>
-                                <span class="tech-tag">mongodb</span>
-                                <span class="tech-tag">jwt</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">JWT</span>
                             </div>
-                    
                         </div>
                     </a>
+                </div>
+                <div class="project-back">
+                    <h3>FoodFusion Platform</h3>
+                    <p>A comprehensive food delivery and restaurant management system with real-time order tracking and user authentication.</p>
+                    <p>Features secure payment processing and admin dashboard for restaurant management.</p>
+                    <div class="project-links">
+                        <a href="https://gdg-hackhon-group-w31g.vercel.app/" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
                     </div>
-                    <div class="project-back">
-                        <h3>Task Management App</h3>
-                        <p>A collaborative task management application with real-time updates, team chat, and advanced project tracking features.</p>
-                        <p>Includes offline functionality and cross-platform synchronization.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Live Demo</a>
-                            <a href="#" target="_blank">GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-front">
+                    <div class="project-img">
+                        <!-- Add your third project image here -->
+                        <!-- <img src="./analytics-image.png" alt="Analytics Dashboard" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;"> -->
+                        📊
+                    </div>
+                    <div class="project-content">
+                        <h3>encrypted chatting application(on going)</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">NodeJs</span>
+                            <span class="tech-tag">CryptoJs</span>
+                            <span class="tech-tag">MongoDB</span>
                         </div>
                     </div>
                 </div>
-                
-                    <div class="project-back">
-                        <h3>AI Analytics Dashboard</h3>
-                        <p>An intelligent analytics platform that uses machine learning to provide predictive insights and automated reporting.</p>
-                        <p>Features real-time data processing and customizable visualization components.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Live Demo</a>
-                            <a href="#" target="_blank">GitHub</a>
-                        </div>
+                <div class="project-back">
+                    <h3>AI Analytics Dashboard</h3>
+                    <p>An intelligent analytics platform that uses machine learning to provide predictive insights and automated reporting.</p>
+                    <p>Features real-time data processing and customizable visualization components.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section id="contact" class="contact">
         <div class="container">
@@ -1866,25 +2332,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+               
             </div>
             <div class="social-links">
                <a href="https://www.linkedin.com/in/hitesh-reddy-113a792a9" class="social-link" target="_blank" aria-label="LinkedIn">💼</a>
