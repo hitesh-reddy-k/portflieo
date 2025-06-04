@@ -944,7 +944,7 @@
     background-size: 400% 400%;
     animation: gradientShift 3s ease-in-out infinite;
     display: flex;
-    align-items: flex-end; /* This will align the image to the bottom */
+    align-items: flex-end; 
     justify-content: center;
     box-shadow: 
         0 0 50px rgba(0,255,136,0.5),
@@ -952,7 +952,7 @@
         inset 0 0 50px rgba(255,255,255,0.1);
     position: relative;
     overflow: hidden;
-    padding-bottom: 20px; /* Adjust this value to move image up/down */
+    padding-bottom: 20px; 
 }
 
 .profile-img-container:hover {
@@ -964,13 +964,13 @@
 }
 
 .profile-photo {
-    width: 320px; /* Slightly smaller than container */
+    width: 320px; 
     height: 320px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center top; /* Focus on the top of the image */
+    object-position: center top;
     border: 3px solid rgba(0,255,136,0.5);
-    transform: translateY(20px); /* Adjust this to fine-tune vertical position */
+    transform: translateY(20px);
     transition: all 0.3s ease;
 }
 
@@ -1109,6 +1109,7 @@
         .about-text p:nth-child(3) { animation-delay: 0.4s; }
         .about-text p:nth-child(4) { animation-delay: 0.6s; }
 
+
         @keyframes textSlideIn {
             from {
                 opacity: 0;
@@ -1119,6 +1120,7 @@
                 transform: translateX(0);
             }
         }
+
 
         .about-text p::before {
             content: '';
@@ -2238,7 +2240,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="project-card">
                 <div class="project-front">
                     <a href="https://gdg-hackhon-group-w31g.vercel.app/" target="_blank">
@@ -2295,6 +2296,37 @@
                         <a href="#" target="_blank">Live Demo</a>
                         <a href="#" target="_blank">GitHub</a>
                     </div>
+                </div>
+            </div>
+
+
+              <div class="project-card">
+                <div class="project-front">
+                    <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">
+                        <div class="project-img">
+                            <img src="./image copy 3.png" alt="Anonymous Messages Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                        </div>
+                        <div class="project-content">
+                            <h3>college website</h3>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-back">
+                   <h3>College Platform</h3>
+<p>A modern college website built to foster interaction among students and faculty — similar to Quora but tailored for academic environments.</p>
+<p>Students can post questions, engage in discussions, and also securely view their academic marks. Designed for seamless communication and performance tracking.</p>
+<div class="project-links">
+    <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">Live Demo</a>
+    <a href="#" target="_blank">GitHub</a>
+</div>
+
                 </div>
             </div>
         </div>
