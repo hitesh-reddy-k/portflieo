@@ -598,7 +598,6 @@
             transform: translate(-50%, -50%);
         }
 
-        /* Enhanced Background Effects */
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -2320,13 +2319,12 @@
                 </div>
                 <div class="project-back">
                    <h3>College Platform</h3>
-<p>A modern college website built to foster interaction among students and faculty — similar to Quora but tailored for academic environments.</p>
-<p>Students can post questions, engage in discussions, and also securely view their academic marks. Designed for seamless communication and performance tracking.</p>
-<div class="project-links">
-    <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">Live Demo</a>
-    <a href="#" target="_blank">GitHub</a>
-</div>
-
+            <p>A modern college website built to foster interaction among students and faculty — similar to Quora but tailored for academic environments.</p>
+            <p>Students can post questions, engage in discussions, and also securely view their academic marks. Designed for seamless communication and performance tracking.</p>
+            <div class="project-links">
+        <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">Live Demo</a>
+        <a href="#" target="_blank">GitHub</a>
+            </div>
                 </div>
             </div>
         </div>
@@ -2378,37 +2376,48 @@
     </footer>
 
     <script>
-        const cursor = document.querySelector('.cursor');
-        const cursorFollower = document.querySelector('.cursor-follower');
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
+       // Optimized cursor movement
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+let posX = 0, posY = 0;
+let mouseX = 0, mouseY = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-        });
+// Faster animation with requestAnimationFrame
+const animateCursor = () => {
+    // Calculate distance between current and target positions
+    posX += (mouseX - posX) / 5; // Increased from 10 to 5 for faster movement
+    posY += (mouseY - posY) / 5;
+    
+    // Apply positions
+    cursorFollower.style.left = posX + 'px';
+    cursorFollower.style.top = posY + 'px';
+    
+    // Immediate cursor position
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+    
+    requestAnimationFrame(animateCursor);
+};
 
-        function animateFollower() {
-            followerX += (mouseX - followerX) * 0.1;
-            followerY += (mouseY - followerY) * 0.1;
-            cursorFollower.style.left = followerX + 'px';
-            cursorFollower.style.top = followerY + 'px';
-            requestAnimationFrame(animateFollower);
-        }
-        animateFollower();
+// Track mouse position
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
 
-        // Cursor hover effects
-        const hoverElements = document.querySelectorAll('a, button, .skill-card, .project-card');
-        hoverElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-            });
-            element.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-            });
-        });
+// Start animation
+animateCursor();
+
+// Cursor hover effects (keep your existing code)
+const hoverElements = document.querySelectorAll('a, button, .skill-card, .project-card');
+hoverElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+    });
+    element.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+    });
+});
 
         // Typing Animation
         const texts = [
