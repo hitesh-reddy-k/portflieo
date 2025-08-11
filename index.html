@@ -19,6 +19,30 @@
             cursor: none;
         }
 
+        @media (max-width: 768px) {
+    .cyber-glitch {
+        font-size: 2.5rem;
+        letter-spacing: 0.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .typing-hologram {
+        padding: 1rem;
+    }
+    
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+    
+    .tech-orbits {
+        display: none;
+    }
+}
+
         .hero {
     position: relative;
     overflow: hidden;
@@ -27,10 +51,11 @@
         rgba(0,5,15,0.9) 70%);
 }
 
+
 .cyberpunk-title {
     position: relative;
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem;     
 }
 
 .cyber-glitch {
@@ -118,6 +143,16 @@
     margin-bottom: 3rem;
     border-radius: 5px;
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-card {
+        padding: 30px;
+    }
 }
 
 .scanlines {
@@ -1263,7 +1298,7 @@
         }
 
         .skill-level {
-            width: 100%;
+            width: 100%; 
             height: 10px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
@@ -1350,6 +1385,36 @@
             transform: rotateY(180deg) scale(1.05);
             animation-play-state: paused;
         }
+        
+        .project-card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.project-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.project-front,
+.project-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.project-back {
+  transform: rotateY(180deg);
+}
 
         .project-front,
         .project-back {
@@ -1435,7 +1500,7 @@
             font-size: 0.9rem;
             border: 1px solid rgba(0,255,136,0.4);
             animation: tagFloat 3s ease-in-out infinite;
-            position: relative;
+             position: relative;
             overflow: hidden;
         }
 
@@ -1705,6 +1770,481 @@
                 opacity: 0;
             }
         }
+        /* AI/ML Projects Section */
+.aiml-projects {
+    animation-delay: 1.2s;
+    background: radial-gradient(ellipse at center, rgba(0,136,255,0.1) 0%, transparent 70%);
+    position: relative;
+    overflow: hidden;
+}
+
+.aiml-projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(0,255,136,0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(0,136,255,0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.aiml-projects h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 80px;
+    background: linear-gradient(45deg, #00ff88, #0088ff, #ff0088, #ffff00);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGradientShift 3s ease-in-out infinite, titleBounce 2s ease-in-out infinite;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes titleGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.aiml-projects h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ff88, #0088ff, #ff0088);
+    animation: aimlTitleLine 2s ease 0.5s forwards;
+    transform: translateX(-50%);
+}
+
+@keyframes aimlTitleLine {
+    to { width: 250px; }
+}
+
+/* AI/ML Projects Grid - 3 columns layout */
+.aiml-projects .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    perspective: 1000px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* AI/ML Project Cards with enhanced styling */
+.aiml-projects .project-card {
+    height: 550px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    cursor: pointer;
+    animation: aimlProjectFloat 4s ease-in-out infinite;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.aiml-projects .project-card:nth-child(1) { animation-delay: 0s; }
+.aiml-projects .project-card:nth-child(2) { animation-delay: 0.8s; }
+.aiml-projects .project-card:nth-child(3) { animation-delay: 1.6s; }
+.aiml-projects .project-card:nth-child(4) { animation-delay: 2.4s; }
+.aiml-projects .project-card:nth-child(5) { animation-delay: 3.2s; }
+.aiml-projects .project-card:nth-child(6) { animation-delay: 4s; }
+
+@keyframes aimlProjectFloat {
+    0%, 100% { 
+        transform: translateY(0) rotateX(0deg);
+        box-shadow: 0 10px 30px rgba(0,255,136,0.2);
+    }
+    50% { 
+        transform: translateY(-15px) rotateX(1deg);
+        box-shadow: 0 25px 50px rgba(0,136,255,0.3);
+    }
+}
+
+.aiml-projects .project-card:hover {
+    transform: rotateY(180deg) scale(1.03);
+    animation-play-state: paused;
+    box-shadow: 0 30px 60px rgba(0,255,136,0.4);
+}
+
+/* AI/ML Project Front and Back Faces */
+.aiml-projects .project-front,
+.aiml-projects .project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0,255,136,0.4);
+    box-shadow: 0 15px 35px rgba(0,255,136,0.25);
+}
+
+.aiml-projects .project-front {
+    background: linear-gradient(135deg, 
+        rgba(0,20,40,0.9) 0%, 
+        rgba(0,10,30,0.95) 100%);
+    backdrop-filter: blur(20px);
+}
+
+.aiml-projects .project-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, 
+        rgba(0,30,60,0.95) 0%, 
+        rgba(0,15,40,0.98) 100%);
+    backdrop-filter: blur(25px);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* AI/ML Project Images with AI-themed styling */
+.aiml-projects .project-img {
+    height: 280px;
+    background: linear-gradient(45deg, #00ff88, #0088ff, #ff0088, #8800ff);
+    background-size: 400% 400%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #000;
+    position: relative;
+    animation: aimlGradientShift 4s ease-in-out infinite;
+    overflow: hidden;
+}
+
+@keyframes aimlGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+}
+
+.aiml-projects .project-img::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        rgba(255,255,255,0.1), 
+        transparent, 
+        rgba(255,255,255,0.2), 
+        transparent
+    );
+    animation: aimlSpinGlow 6s linear infinite;
+}
+
+@keyframes aimlSpinGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.aiml-projects .project-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(255,255,255,0.1) 50%, 
+        transparent 70%);
+    animation: aimlShimmer 3s ease-in-out infinite;
+}
+
+@keyframes aimlShimmer {
+    0% { transform: translateX(-100%) skewX(-15deg); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(200%) skewX(-15deg); opacity: 0; }
+}
+
+/* AI/ML Project Content */
+.aiml-projects .project-content {
+    padding: 25px 30px;
+    background: linear-gradient(180deg, 
+        rgba(0,0,0,0.9) 0%, 
+        rgba(0,20,40,0.95) 100%);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(0,255,136,0.2);
+}
+
+.aiml-projects .project-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #00ff88;
+    animation: aimlTitleGlow 3s ease-in-out infinite alternate;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+@keyframes aimlTitleGlow {
+    from { 
+        text-shadow: 0 0 10px rgba(0,255,136,0.5), 0 0 20px rgba(0,255,136,0.3);
+        transform: scale(1);
+    }
+    to { 
+        text-shadow: 0 0 20px rgba(0,255,136,0.8), 0 0 40px rgba(0,255,136,0.5);
+        transform: scale(1.02);
+    }
+}
+
+/* AI/ML Tech Tags with enhanced styling */
+.aiml-projects .tech-tag {
+    background: linear-gradient(45deg, rgba(0,255,136,0.2), rgba(0,136,255,0.2));
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0,255,136,0.4);
+    animation: aimlTagFloat 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.aiml-projects .tech-tag:nth-child(1) { animation-delay: 0.2s; }
+.aiml-projects .tech-tag:nth-child(2) { animation-delay: 0.4s; }
+.aiml-projects .tech-tag:nth-child(3) { animation-delay: 0.6s; }
+.aiml-projects .tech-tag:nth-child(4) { animation-delay: 0.8s; }
+.aiml-projects .tech-tag:nth-child(5) { animation-delay: 1s; }
+
+@keyframes aimlTagFloat {
+    0%, 100% { 
+        transform: translateY(0) scale(1);
+        box-shadow: 0 2px 10px rgba(0,255,136,0.2);
+    }
+    50% { 
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 5px 20px rgba(0,255,136,0.4);
+    }
+}
+
+.aiml-projects .tech-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.3), 
+        transparent);
+    transition: left 0.6s ease;
+}
+
+.aiml-projects .tech-tag:hover::before {
+    left: 100%;
+}
+
+/* AI/ML Project Back Content */
+.aiml-projects .project-back h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #00ff88;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.aiml-projects .project-back h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #00ff88, #0088ff);
+    transform: translateX(-50%);
+}
+
+.aiml-projects .project-back p {
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+/* AI/ML Project Links */
+.aiml-projects .project-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.aiml-projects .project-links a {
+    padding: 12px 30px;
+    background: linear-gradient(45deg, rgba(0,255,136,0.2), rgba(0,136,255,0.2));
+    color: #00ff88;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 2px solid #00ff88;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.aiml-projects .project-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,255,136,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.aiml-projects .project-links a:hover {
+    background: linear-gradient(45deg, #00ff88, #0088ff);
+    color: #000;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,255,136,0.4);
+    border-color: #fff;
+}
+
+.aiml-projects .project-links a:hover::before {
+    left: 100%;
+}
+
+/* Responsive Design for AI/ML Section */
+@media (max-width: 768px) {
+    .aiml-projects .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .aiml-projects .project-card {
+        height: 420px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .aiml-projects h2 {
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+    }
+    
+    .aiml-projects .project-img {
+        height: 240px;
+        font-size: 3rem;
+    }
+    
+    .aiml-projects .project-content {
+        padding: 20px 25px;
+    }
+    
+    .aiml-projects .project-back {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .aiml-projects h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .aiml-projects .project-card {
+        height: 380px;
+    }
+    
+    .aiml-projects .project-img {
+        height: 200px;
+        font-size: 2.5rem;
+    }
+    
+    .aiml-projects .project-content {
+        padding: 15px 20px;
+    }
+    
+    .aiml-projects .project-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .aiml-projects .tech-tag {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .aiml-projects .project-links a {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+/* AI/ML Section Unique Background Elements */
+.aiml-projects::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(0,255,136,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: aimlBgOrb1 8s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes aimlBgOrb1 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50px, -30px) scale(1.5); opacity: 0.8; }
+}
+
+/* Additional floating AI elements */
+.aiml-projects .container::before {
+    content: '🤖';
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    font-size: 2rem;
+    opacity: 0.1;
+    animation: aimlFloatIcon 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+.aiml-projects .container::after {
+    content: '⚡';
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+    font-size: 1.5rem;
+    opacity: 0.1;
+    animation: aimlFloatIcon 6s ease-in-out infinite reverse;
+    z-index: -1;
+}
+
+@keyframes aimlFloatIcon {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+ 
+
 
         /* Code Lines Background */
         .code-lines {
@@ -2212,6 +2752,7 @@
         <h2>Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
+                <div class="card-inner">
                 <div class="project-front">
                     <a href="https://anoniymousmessages.vercel.app/" target="_blank">
                         <div class="project-img">
@@ -2229,17 +2770,20 @@
                         </div>
                     </a>
                 </div>
+
                 <div class="project-back">
                     <h3>Anonymous Messages Platform</h3>
                     <p>A secure messaging platform that allows users to send and receive anonymous messages with complete privacy protection.</p>
                     <p>Built with modern web technologies for optimal performance and user experience.</p>
                     <div class="project-links">
                         <a href="https://anoniymousmessages.vercel.app/" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">GitHub</a>
+                        
+                    </div>
                     </div>
                 </div>
             </div>
             <div class="project-card">
+                <div class="card-inner">
                 <div class="project-front">
                     <a href="https://gdg-hackhon-group-w31g.vercel.app/" target="_blank">
                         <div class="project-img">
@@ -2265,12 +2809,13 @@
                     <p>Features secure payment processing and admin dashboard for restaurant management.</p>
                     <div class="project-links">
                         <a href="https://gdg-hackhon-group-w31g.vercel.app/" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">GitHub</a>
                     </div>
+                </div>
                 </div>
             </div>
             
             <div class="project-card">
+                <div class="card-inner">
                 <div class="project-front">
                     <div class="project-img">
                         <!-- Add your third project image here -->
@@ -2292,14 +2837,16 @@
                     <p>An intelligent analytics platform that uses machine learning to provide predictive insights and automated reporting.</p>
                     <p>Features real-time data processing and customizable visualization components.</p>
                     <div class="project-links">
-                        <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">GitHub</a>
+                       
+                        
                     </div>
+                </div>
                 </div>
             </div>
 
 
               <div class="project-card">
+                <div class="card-inner">
                 <div class="project-front">
                     <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">
                         <div class="project-img">
@@ -2323,14 +2870,156 @@
             <p>Students can post questions, engage in discussions, and also securely view their academic marks. Designed for seamless communication and performance tracking.</p>
             <div class="project-links">
         <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">Live Demo</a>
-        <a href="#" target="_blank">GitHub</a>
+       
             </div>
                 </div>
             </div>
         </div>
+        </div>
     </div>
 </section>
 
+
+<section id="aiml-projects" class="aiml-projects">
+        <div class="container">
+            <h2>AI/ML Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="card-inner">
+                    <div class="project-front">
+                        <a href="https://github.com/yourusername/sentiment-analysis" target="_blank">
+                            <div class="project-img">
+                                🤖
+                            </div>
+                            <div class="project-content">
+                                <h3>PDF Analyzer</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">nodejs</span>
+                                    <span class="tech-tag">OpenRouter(api key)</span>
+                                    <span class="tech-tag">express</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="project-back">
+                        <h3>PDF Analysis Model</h3>
+                       <p>
+        A backend service built with <strong>Node.js</strong> and <strong>Express</strong> that allows users 
+        to upload PDF documents, automatically process their content, and perform intelligent analysis.
+    </p>
+    <p>
+        Uses the <strong>OpenRouter API</strong> to query large language models, enabling the system 
+        to extract meaningful information and answer context-specific questions based on the PDF content.
+    </p>
+                        <div class="project-links">
+                            <a href="https://github.com/hitesh-reddy-k/bajaj-hackthon" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+    <div class="card-inner">
+        
+        <div class="project-front">
+            <a href="https://github.com/hitesh-reddy-k/stock-predictor" target="_blank">
+                <div class="project-img">
+                    📈
+                </div>
+                <div class="project-content">
+                    <h3>Stock Predictor Bot</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">pandas-ta</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">scikit-learn</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Back of the card -->
+        <div class="project-back">
+            <h3>Stock Predictor Bot</h3>
+            <p>
+                An AI-powered bot that predicts next-day stock closing prices using historical market data 
+                and advanced technical indicators like SMA, EMA, RSI, MACD, and volatility.
+            </p>
+            <p>
+                Built with <strong>Python</strong>, <strong>LSTM neural networks</strong> in TensorFlow/Keras, 
+                and technical analysis via <strong>pandas-ta</strong>.  
+                The model uses <strong>MinMaxScaler</strong> normalization and multiple time-step sequences for 
+                more accurate predictions.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/hitesh-reddy-k/stock-predictor" target="_blank">View on GitHub</a>
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="project-card">
+    <div class="card-inner">
+        <div class="project-front">
+            <a href="https://github.com/yourusername/weather-predictor" target="_blank">
+                <div class="project-img">
+                    🌦️
+                </div>
+                <div class="project-content">
+                    <h3>Weather Predictor</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">Tkinter</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Back of the card -->
+        <div class="project-back">
+            <h3>Weather Predictor</h3>
+            <p>
+                A machine learning application that predicts weather conditions based on multiple atmospheric factors such as 
+                <strong>air moisture</strong>, temperature, wind speed, pressure, and more.
+            </p>
+            <p>
+                Built with <strong>TensorFlow</strong> for the prediction model, <strong>Pandas</strong> and <strong>NumPy</strong> 
+                for data processing, and <strong>scikit-learn's StandardScaler</strong> for feature scaling to improve model accuracy.
+            </p>
+           
+            <div class="project-links">
+                <a href="https://github.com/hitesh-reddy-k/megathon" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+
+
+<section id="aiml-projects" class="aiml-projects">
+        <div class="container">
+            <h2>Discord bots</h2>
+            <h2>links are comming soon</h2>
+                  
+                   
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="contact" class="contact">
         <div class="container">
@@ -2364,8 +3053,35 @@
                
             </div>
             <div class="social-links">
-               <a href="https://www.linkedin.com/in/hitesh-reddy-113a792a9" class="social-link" target="_blank" aria-label="LinkedIn">💼</a>
-                <a href="https://www.instagram.com/hitesh_reddy_k_hrk" class="social-link" target="_blank" aria-label="Instagram">📷</a>
+            <a href="https://www.linkedin.com/in/hitesh-reddy-113a792a9"
+   class="social-link"
+   target="_blank"
+   aria-label="LinkedIn">
+  <!-- LinkedIn SVG (uses currentColor so CSS .social-link color works) -->
+  <svg role="img" aria-hidden="false" xmlns="http://www.w3.org/2000/svg"
+       width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <title>LinkedIn</title>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-14h4v2"></path>
+    <rect x="2" y="8" width="4" height="14" rx="1"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+  </svg>
+</a>
+
+<a href="https://www.instagram.com/hitesh_reddy_k_hrk"
+   class="social-link"
+   target="_blank"
+   aria-label="Instagram">
+  <!-- Instagram SVG (uses currentColor so CSS .social-link color works) -->
+  <svg role="img" aria-hidden="false" xmlns="http://www.w3.org/2000/svg"
+       width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <title>Instagram</title>
+    <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+  </svg>
+</a>
     </div>
             </div>
         </div>
@@ -2515,7 +3231,6 @@ hoverElements.forEach(element => {
             }, 2000);
         });
 
-        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -2528,12 +3243,11 @@ hoverElements.forEach(element => {
                 }
             });
         }, observerOptions);
-
+        
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
 
-        // Parallax effect for background elements
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
             const shapes = document.querySelectorAll('.shape');
