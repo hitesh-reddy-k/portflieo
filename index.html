@@ -10,6 +10,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+.lazy-anim {
+    animation: none !important;
+    opacity: 0.5;
+}
 
 html, body {
     overflow-x: hidden;
@@ -2413,6 +2417,13 @@ section {
 .social-link:hover::before {
     opacity: 1;
 }
+@media (max-width: 768px) {
+    .cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+}
+
 
 .social-link:hover {
     color: #000;
@@ -2566,17 +2577,19 @@ footer p {
     </style>
 </head>
 <body>
+
+
     <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <div class="cursor lazy-anim"></div>
+    <div class="cursor-follower lazy-anim"></div>
     
     <!-- Background Effects -->
-    <div class="matrix-bg"></div>
-    <div class="floating-shapes"></div>
-    <div class="grid-overlay"></div>
+    <div class="matrix-bg lazy-anim"></div>
+    <div class="floating-shapes lazy-anim"></div>
+    <div class="grid-overlay lazy-anim"></div>
 
     <!-- Navigation -->
-    <nav>
+    <nav class="lazy-anim">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -2584,42 +2597,39 @@ footer p {
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        
     </nav>
 
     <!-- Hero Section -->
- <section id="home" class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <!-- Cyberpunk-style main title with circuit board effect -->
-            <div class="cyberpunk-title">
+    <!-- HERO SECTION -->
+<section id="home" class="hero lazy-anim">
+    <div class="container lazy-anim">
+        <div class="hero-content lazy-anim">
+
+            <div class="cyberpunk-title lazy-anim">
                 <h1 class="cyber-glitch" data-text="HITESH_REDDY_K">HITESH_REDDY_K</h1>
-                <div class="circuit-overlay"></div>
+                <div class="circuit-overlay lazy-anim"></div>
             </div>
-            
-            <!-- Binary code matrix effect behind the subtitle -->
-            <p class="subtitle binary-matrix">
+
+            <p class="subtitle binary-matrix lazy-anim">
                 <span class="binary-line">01000110 01110101 01101100 01101100 00100000 01010011 01110100 01100001 01100011 01101011</span>
                 <span class="binary-line">01000100 01100101 01110110 01100101 01101100 01101111 01110000 01100101 01110010</span>
             </p>
-            
-            <!-- Holographic typing container with scan lines -->
-            <div class="typing-hologram">
+
+            <div class="typing-hologram lazy-anim">
                 <div class="scanlines"></div>
                 <div class="typing-container">
                     <div class="typing-animation" id="typing-text"></div>
                     <div class="terminal-caret">_</div>
                 </div>
             </div>
-            
-            <!-- Cyberpunk-style CTA button with energy pulse -->
-            <a href="#projects" class="cta-button cyber-button">
+
+            <a href="#projects" class="cta-button cyber-button lazy-anim">
                 <span class="button-text">ACCESS_WORK</span>
                 <span class="button-pulse"></span>
                 <span class="button-glitch"></span>
             </a>
-                        
-            <div class="tech-orbits">
+
+            <div class="tech-orbits lazy-anim">
                 <div class="orbit orbit-1">
                     <div class="tech-icon">{"}"}</div>
                     <div class="orbit-path"></div>
@@ -2633,28 +2643,30 @@ footer p {
                     <div class="orbit-path"></div>
                 </div>
             </div>
-            
-            
-            <div class="server-rack">
+
+            <div class="server-rack lazy-anim">
                 <div class="server-unit"></div>
                 <div class="server-unit"></div>
                 <div class="server-unit"></div>
                 <div class="server-lights"></div>
             </div>
+
         </div>
     </div>
 </section>
 
 
-  
-<section id="about" class="about">
-    <div class="container">
-        <div class="about-content">
-            <div class="profile-container">
-                <div class="profile-img">
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about lazy-anim">
+    <div class="container lazy-anim">
+        <div class="about-content lazy-anim">
+            <div class="profile-container lazy-anim">
+                <div class="profile-img lazy-anim">
                     <div class="profile-img-container">
                         <img src="./image copy.png" alt="Hitesh Reddy K" class="profile-photo">
                     </div>
+
                     <div class="profile-particles">
                         <div class="profile-particle"></div>
                         <div class="profile-particle"></div>
@@ -2663,9 +2675,11 @@ footer p {
                         <div class="profile-particle"></div>
                         <div class="profile-particle"></div>
                     </div>
+
                 </div>
             </div>
-            <div class="about-text">
+
+            <div class="about-text lazy-anim">
                 <h2>About Me</h2>
                 <p>I'm a passionate full-stack developer. My journey in tech started with curiosity and has evolved into a career dedicated to building innovative applications.</p>
                 <p>I specialize in modern web technologies and creating user experiences that are both beautiful and functional. Every project is an opportunity to push boundaries and deliver exceptional results.</p>
@@ -2674,187 +2688,217 @@ footer p {
         </div>
     </div>
 </section>
-    
-
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">🚀</div>
-                    <h3>Frontend Development</h3>
-                    <p>Creating responsive and interactive user interfaces with modern frameworks and libraries.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Backend Development</h3>
-                    <p>Building robust server-side applications and APIs with scalable architecture.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h3>UI/UX Design</h3>
-                    <p>Designing intuitive and engaging user experiences with attention to detail.</p>
-                    <div class="skill-level">
-                        <div class="skill-progress" style="width: 75%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    <section id="projects" class="projects">
-    <div class="container">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="card-inner">
-                <div class="project-front">
-                    <a href="https://anoniymousmessages.vercel.app/" target="_blank">
-                        <div class="project-img">
-                            <img src="./image.png" alt="Anonymous Messages Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
-                        </div>
-                        <div class="project-content">
-                            <h3>Anonymous Messages</h3>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
 
-                <div class="project-back">
-                    <h3>Anonymous Messages Platform</h3>
-                    <p>A secure messaging platform that allows users to send and receive anonymous messages with complete privacy protection.</p>
-                    <p>Built with modern web technologies for optimal performance and user experience.</p>
-                    <div class="project-links">
-                        <a href="https://anoniymousmessages.vercel.app/" target="_blank">Live Demo</a>
-                        
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="card-inner">
-                <div class="project-front">
-                    <a href="https://gdg-hackhon-group-w31g.vercel.app/" target="_blank">
-                        <div class="project-img">
-                            <img src="./image copy 2.png" alt="Anonymous Messages Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
-                            
-                        </div>
-                        <div class="project-content">
-                            <h3>FoodFusion</h3>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                                <span class="tech-tag">JWT</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-back">
-                    <h3>FoodFusion Platform</h3>
-                    <p>A comprehensive food delivery and restaurant management system with real-time order tracking and user authentication.</p>
-                    <p>Features secure payment processing and admin dashboard for restaurant management.</p>
-                    <div class="project-links">
-                        <a href="https://gdg-hackhon-group-w31g.vercel.app/" target="_blank">Live Demo</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="card-inner">
-                <div class="project-front">
-                    <div class="project-img">
-                        <!-- Add your third project image here -->
-                        <!-- <img src="./analytics-image.png" alt="Analytics Dashboard" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;"> -->
-                        📊
-                    </div>
-                    <div class="project-content">
-                        <h3>encrypted chatting application(on going)</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">NodeJs</span>
-                            <span class="tech-tag">CryptoJs</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-back">
-                    <h3>encrypted chatting application</h3>
-                    <p>A secure and encrypted user database schema designed for a real-time chatting application.</p>
-                    <p>It includes RSA key pair generation for end-to-end encryption, password hashing with bcrypt, 
-and JWT-based authentication. The schema also supports OTP verification, password reset functionality, 
-contact management, and user status tracking with online presence and last seen.</p>
-                    <div class="project-links">
-                       
-                        
-                    </div>
-                </div>
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills lazy-anim">
+    <div class="container lazy-anim">
+        <h2>My Skills</h2>
+        <div class="skills-grid lazy-anim">
+
+            <div class="skill-card lazy-anim">
+                <div class="skill-icon">🚀</div>
+                <h3>Frontend Development</h3>
+                <p>Creating responsive and interactive user interfaces with modern frameworks and libraries.</p>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 90%"></div>
                 </div>
             </div>
 
+            <div class="skill-card lazy-anim">
+                <div class="skill-icon">⚙️</div>
+                <h3>Backend Development</h3>
+                <p>Building robust server-side applications and APIs with scalable architecture.</p>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
 
-              <div class="project-card">
-                <div class="card-inner">
-                <div class="project-front">
-                    <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">
-                        <div class="project-img">
-                            <img src="./image copy 3.png" alt="Anonymous Messages Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
-                        </div>
-                        <div class="project-content">
-                            <h3>college website</h3>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-back">
-                   <h3>College Platform</h3>
-            <p>A modern college website built to foster interaction among students and faculty — similar to Quora but tailored for academic environments.</p>
-            <p>Students can post questions, engage in discussions, and also securely view their academic marks. Designed for seamless communication and performance tracking.</p>
-            <div class="project-links">
-        <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">Live Demo</a>
-       
-            </div>
+            <div class="skill-card lazy-anim">
+                <div class="skill-icon">🎨</div>
+                <h3>UI/UX Design</h3>
+                <p>Designing intuitive and engaging user experiences with attention to detail.</p>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 75%"></div>
                 </div>
             </div>
-        </div>
+
         </div>
     </div>
 </section>
 
 
-<section id="aiml-projects" class="aiml-projects">
-        <div class="container">
-            <h2>AI/ML Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="card-inner">
-                    <div class="project-front">
-                        <a href="https://github.com/yourusername/sentiment-analysis" target="_blank">
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="projects lazy-anim">
+    <div class="container lazy-anim">
+        <h2>Featured Projects</h2>
+
+        <div class="projects-grid lazy-anim">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card lazy-anim">
+                <div class="card-inner lazy-anim">
+
+                    <div class="project-front lazy-anim">
+                        <a href="https://anoniymousmessages.vercel.app/" target="_blank">
+
                             <div class="project-img">
-                                🤖
+                                <img src="./image.png" alt="Anonymous Messages Project" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
                             </div>
+
+                            <div class="project-content">
+                                <h3>Anonymous Messages</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                </div>
+                            </div>
+
+                        </a>
+                    </div>
+
+                    <div class="project-back lazy-anim">
+                        <h3>Anonymous Messages Platform</h3>
+                        <p>A secure messaging platform that allows users to send and receive anonymous messages with complete privacy protection.</p>
+                        <p>Built with modern web technologies for optimal performance and user experience.</p>
+                        <div class="project-links">
+                            <a href="https://anoniymousmessages.vercel.app/" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- PROJECT 2 -->
+            <div class="project-card lazy-anim">
+                <div class="card-inner lazy-anim">
+
+                    <div class="project-front lazy-anim">
+                        <a href="https://gdg-hackhon-group-w31g.vercel.app/" target="_blank">
+
+                            <div class="project-img">
+                                <img src="./image copy 2.png" alt="FoodFusion" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+                            </div>
+
+                            <div class="project-content">
+                                <h3>FoodFusion</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                    <span class="tech-tag">JWT</span>
+                                </div>
+                            </div>
+
+                        </a>
+                    </div>
+
+                    <div class="project-back lazy-anim">
+                        <h3>FoodFusion Platform</h3>
+                        <p>A comprehensive food delivery and restaurant management system with real-time order tracking and user authentication.</p>
+                        <p>Features secure payment processing and admin dashboard for restaurant management.</p>
+                        <div class="project-links">
+                            <a href="https://gdg-hackhon-group-w31g.vercel.app/" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- PROJECT 3 -->
+            <div class="project-card lazy-anim">
+                <div class="card-inner lazy-anim">
+
+                    <div class="project-front lazy-anim">
+                        <div class="project-img">📊</div>
+                        <div class="project-content">
+                            <h3>encrypted chatting application(on going)</h3>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">NodeJs</span>
+                                <span class="tech-tag">CryptoJs</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-back lazy-anim">
+                        <h3>encrypted chatting application</h3>
+                        <p>A secure and encrypted user database schema designed for a real-time chatting application.</p>
+                        <p>It includes RSA key pair generation for end-to-end encryption, password hashing with bcrypt, JWT-based authentication, OTP verification, password reset, contacts, and user status tracking.</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- PROJECT 4 -->
+            <div class="project-card lazy-anim">
+                <div class="card-inner lazy-anim">
+
+                    <div class="project-front lazy-anim">
+                        <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">
+                            <div class="project-img">
+                                <img src="./image copy 3.png" alt="College Website" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+                            </div>
+
+                            <div class="project-content">
+                                <h3>college website</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="project-back lazy-anim">
+                        <h3>College Platform</h3>
+                        <p>A modern college website built to foster interaction among students and faculty — similar to Quora but tailored for academic environments.</p>
+                        <p>Students can post questions, engage in discussions, and also securely view their academic marks.</p>
+                        <div class="project-links">
+                            <a href="https://collage-repo-1-qxtl.vercel.app/" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- AI/ML PROJECTS -->
+<section id="aiml-projects" class="aiml-projects lazy-anim">
+    <div class="container lazy-anim">
+        <h2>AI/ML Projects</h2>
+
+        <div class="projects-grid lazy-anim">
+
+            <!-- PDF ANALYZER -->
+            <div class="project-card lazy-anim">
+                <div class="card-inner lazy-anim">
+
+                    <div class="project-front lazy-anim">
+                        <a href="https://github.com/yourusername/sentiment-analysis" target="_blank">
+                            <div class="project-img">🤖</div>
                             <div class="project-content">
                                 <h3>PDF Analyzer</h3>
                                 <div class="project-tech">
@@ -2865,197 +2909,209 @@ contact management, and user status tracking with online presence and last seen.
                             </div>
                         </a>
                     </div>
-                    <div class="project-back">
+
+                    <div class="project-back lazy-anim">
                         <h3>PDF Analysis Model</h3>
-                       <p>
-        A backend service built with <strong>Node.js</strong> and <strong>Express</strong> that allows users 
-        to upload PDF documents, automatically process their content, and perform intelligent analysis.
-    </p>
-    <p>
-        Uses the <strong>OpenRouter API</strong> to query large language models, enabling the system 
-        to extract meaningful information and answer context-specific questions based on the PDF content.
-    </p>
+                        <p>A backend service built with <b>Node.js</b> and <b>Express</b> that allows users to upload PDF documents and analyze content.</p>
+                        <p>Uses <b>OpenRouter API</b> for advanced model-based processing.</p>
                         <div class="project-links">
                             <a href="https://github.com/hitesh-reddy-k/bajaj-hackthon" target="_blank">View on GitHub</a>
                         </div>
                     </div>
+
+                </div>
+            </div>
+
+
+            <!-- STOCK PREDICTOR -->
+            <div class="project-card lazy-anim">
+                <div class="card-inner lazy-anim">
+
+                    <div class="project-front lazy-anim">
+                        <a href="https://github.com/hitesh-reddy-k/stock-predictor" target="_blank">
+                            <div class="project-img">📈</div>
+                            <div class="project-content">
+                                <h3>Stock Predictor Bot</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Pandas</span>
+                                    <span class="tech-tag">pandas-ta</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">LSTM</span>
+                                    <span class="tech-tag">scikit-learn</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="project-back lazy-anim">
+                        <h3>Stock Predictor Bot</h3>
+                        <p>Predicts next-day stock prices using historical market data and technical indicators.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/hitesh-reddy-k/stock-predictor" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- WEATHER PREDICTOR -->
+            <div class="project-card lazy-anim">
+                <div class="card-inner lazy-anim">
+
+                    <div class="project-front lazy-anim">
+                        <a href="https://github.com/yourusername/weather-predictor" target="_blank">
+                            <div class="project-img">🌦️</div>
+                            <div class="project-content">
+                                <h3>Weather Predictor</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Pandas</span>
+                                    <span class="tech-tag">NumPy</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">scikit-learn</span>
+                                    <span class="tech-tag">Tkinter</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="project-back lazy-anim">
+                        <h3>Weather Predictor</h3>
+                        <p>A machine learning application predicting weather based on atmospheric data.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/hitesh-reddy-k/megathon" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- DISCORD BOTS -->
+<section id="aiml-projects" class="aiml-projects lazy-anim">
+    <div class="container lazy-anim">
+        <h2>Discord bots</h2>
+        <h2>links are comming soon</h2>
+    </div>
+</section>
+
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact lazy-anim">
+    <div class="container lazy-anim">
+        <h2>Get In Touch</h2>
+
+        <div class="contact-container lazy-anim">
+
+            <div class="contact-info lazy-anim">
+
+                <div class="contact-item lazy-anim">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <p>hiteshreddyai@gmail.community</p>
                     </div>
                 </div>
 
-                <div class="project-card">
-    <div class="card-inner">
-        
-        <div class="project-front">
-            <a href="https://github.com/hitesh-reddy-k/stock-predictor" target="_blank">
-                <div class="project-img">
-                    📈
-                </div>
-                <div class="project-content">
-                    <h3>Stock Predictor Bot</h3>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">pandas-ta</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">LSTM</span>
-                        <span class="tech-tag">scikit-learn</span>
+                <div class="contact-item lazy-anim">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-text">
+                        <h3>Phone</h3>
+                        <p>+91 6281373089</p>
                     </div>
                 </div>
+
+                <div class="contact-item lazy-anim">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-text">
+                        <h3>Availability</h3>
+                        <p>Open to opportunities</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="social-links lazy-anim">
+
+            <a href="https://www.linkedin.com/in/hitesh-reddy-113a792a9" class="social-link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" stroke="currentColor" fill="none">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-14h4v2"></path>
+                    <rect x="2" y="8" width="4" height="14" rx="1"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
             </a>
-        </div>
 
-        <!-- Back of the card -->
-        <div class="project-back">
-            <h3>Stock Predictor Bot</h3>
-            <p>
-                An AI-powered bot that predicts next-day stock closing prices using historical market data 
-                and advanced technical indicators like SMA, EMA, RSI, MACD, and volatility.
-            </p>
-            <p>
-                Built with <strong>Python</strong>, <strong>LSTM neural networks</strong> in TensorFlow/Keras, 
-                and technical analysis via <strong>pandas-ta</strong>.  
-                The model uses <strong>MinMaxScaler</strong> normalization and multiple time-step sequences for 
-                more accurate predictions.
-            </p>
-            <div class="project-links">
-                <a href="https://github.com/hitesh-reddy-k/stock-predictor" target="_blank">View on GitHub</a>
-              
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="project-card">
-    <div class="card-inner">
-        <div class="project-front">
-            <a href="https://github.com/yourusername/weather-predictor" target="_blank">
-                <div class="project-img">
-                    🌦️
-                </div>
-                <div class="project-content">
-                    <h3>Weather Predictor</h3>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">NumPy</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">scikit-learn</span>
-                        <span class="tech-tag">Tkinter</span>
-                    </div>
-                </div>
+            <a href="https://www.instagram.com/hitesh_reddy_k_hrk" class="social-link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" stroke="currentColor" fill="none">
+                    <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+                </svg>
             </a>
+
         </div>
 
-        <!-- Back of the card -->
-        <div class="project-back">
-            <h3>Weather Predictor</h3>
-            <p>
-                A machine learning application that predicts weather conditions based on multiple atmospheric factors such as 
-                <strong>air moisture</strong>, temperature, wind speed, pressure, and more.
-            </p>
-            <p>
-                Built with <strong>TensorFlow</strong> for the prediction model, <strong>Pandas</strong> and <strong>NumPy</strong> 
-                for data processing, and <strong>scikit-learn's StandardScaler</strong> for feature scaling to improve model accuracy.
-            </p>
-           
-            <div class="project-links">
-                <a href="https://github.com/hitesh-reddy-k/megathon" target="_blank">View on GitHub</a>
-            </div>
-        </div>
     </div>
-</div>
-
-                
-            </div>
-        </div>
-    </section>
+</section>
 
 
-<section id="aiml-projects" class="aiml-projects">
-        <div class="container">
-            <h2>Discord bots</h2>
-            <h2>links are comming soon</h2>
-                  
-                   
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-text">
-                            <h3>Email</h3>
-                            <p>hiteshreddyai@gmail.community</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-text">
-                            <h3>Phone</h3>
-                            <p>+91 6281373089</p>
-                        </div>
-                    </div>
-                  
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div class="contact-text">
-                            <h3>Availability</h3>
-                            <p>Open to opportunities</p>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-            <div class="social-links">
-            <a href="https://www.linkedin.com/in/hitesh-reddy-113a792a9"
-   class="social-link"
-   target="_blank"
-   aria-label="LinkedIn">
-  <!-- LinkedIn SVG (uses currentColor so CSS .social-link color works) -->
-  <svg role="img" aria-hidden="false" xmlns="http://www.w3.org/2000/svg"
-       width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <title>LinkedIn</title>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-14h4v2"></path>
-    <rect x="2" y="8" width="4" height="14" rx="1"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-  </svg>
-</a>
+<!-- FOOTER -->
+<footer class="lazy-anim">
+    <p>&copy; 2024 Hitesh reddy k. All rights reserved. Built with passion and lots of coffee ☕</p>
+</footer>
 
-<a href="https://www.instagram.com/hitesh_reddy_k_hrk"
-   class="social-link"
-   target="_blank"
-   aria-label="Instagram">
-  <!-- Instagram SVG (uses currentColor so CSS .social-link color works) -->
-  <svg role="img" aria-hidden="false" xmlns="http://www.w3.org/2000/svg"
-       width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-    <title>Instagram</title>
-    <rect x="2" y="2" width="20" height="20" rx="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
-  </svg>
-</a>
-    </div>
-            </div>
-        </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2024 Hitesh reddy k. All rights reserved. Built with passion and lots of coffee ☕</p>
-    </footer>
+
+
 
     <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove("lazy-anim");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.01,
+        rootMargin: "150px 0px"
+    });
+
+    document.querySelectorAll(".lazy-anim").forEach(el => observer.observe(el));
+
+});
+
+
+let lastInteraction = Date.now();
+
+document.addEventListener("mousemove", () => lastInteraction = Date.now());
+document.addEventListener("scroll", () => lastInteraction = Date.now());
+
+setInterval(() => {
+    const idle = Date.now() - lastInteraction > 3000;
+
+    document.body.style.animationPlayState = idle ? "paused" : "running";
+
+    document.querySelectorAll("*").forEach(el => {
+        el.style.animationPlayState = idle ? "paused" : "running";
+    });
+}, 1000);
+
+
        // Optimized cursor movement
 const cursor = document.querySelector('.cursor');
 const cursorFollower = document.querySelector('.cursor-follower');
@@ -3196,8 +3252,8 @@ hoverElements.forEach(element => {
         });
 
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.01,
+            rootMargin: '150px 0px'
         };
 
         const observer = new IntersectionObserver(function(entries) {
